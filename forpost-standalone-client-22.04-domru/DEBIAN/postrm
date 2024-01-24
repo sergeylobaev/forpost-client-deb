@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm /usr/share/applications/Forpost.desktop
+
+USER='cctv-local'
+rm /home/$USER/.config/Forpost.conf
+rm /home/$USER/.config/autostart/Forpost.desktop

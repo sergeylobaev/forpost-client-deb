@@ -1,0 +1,10 @@
+Package: forpost-standalone-client
+Version: 1.0.1
+Section: unknown
+Priority: optional
+Depends: qtmultimedia5-dev, qml-module-qtwebview, qml-module-qtquick-controls, qtwebengine5-dev
+Architecture: amd64
+Essential: no
+Maintainer: Forpost <support@fpst.ru>
+Description: Forpost Client
+Installed-Size: `du -ks usr|cut -f 1`

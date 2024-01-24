@@ -1,0 +1,41 @@
+#!/bin/bash -e
+
+echo '[Desktop Entry]
+Name=Дом.ру Бизнес
+Exec=/usr/bin/ForpostClient "Дом.ру Бизнес"
+Icon=/usr/share/icons/icon_desktop_domru.png
+Terminal=false
+Type=Application
+NoDisplay=false' > /usr/share/applications/Forpost.desktop
+
+USER='cctv-local'
+
+if [ ! -d /home/$USER/.config ] ; then
+mkdir /home/$USER/.config
+fi
+
+echo '[General]
+applogo=/usr/share/icons/logo_domru_b2b.png
+AutoLoginIsEnabled=1
+FullscreenIsEnabled=1
+IsLocalRegistrator=1
+IsLoginServerHidden=1
+IsLoginPasswordResetHidden=1
+IsLoginCloseHidden=1
+CheckActivation=1
+DefaultPortalURL=/account/analytics
+server=127.0.0.1' > /home/$USER/.config/Forpost.conf
+
+chown $USER:$USER /home/$USER/.config/Forpost.conf
+
+if [ ! -d /home/$USER/.config/autostart ] ; then
+mkdir /home/$USER/.config/autostart
+fi
+
+echo '[Desktop Entry]
+Name=Дом.ру Бизнес
+Exec=/usr/bin/ForpostClient "Дом.ру Бизнес"
+Icon=/usr/share/icons/icon_desktop_domru.png
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true' > /home/$USER/.config/autostart/Forpost.desktop
