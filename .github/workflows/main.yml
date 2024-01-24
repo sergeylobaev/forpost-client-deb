@@ -1,0 +1,20 @@
+name: Build Debian Package
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build deb package
+      run: |
+        dpkg -b forpost-standalone-client-22.04-domru
+
+    - name: Upload Debian Package
+      uses: actions/upload-artifact@v2
+      with:
+        name: forpost-client
+        path: forpost-standalone-client-22.04-domru.deb
+    
