@@ -10,6 +10,10 @@ NoDisplay=false' > /usr/share/applications/Forpost.desktop
 
 USER='cctv-local'
 
+if [ ! -d /home/$USER ] ; then
+  exit 0
+fi
+
 if [ ! -d /home/$USER/.config ] ; then
 mkdir /home/$USER/.config
 fi
