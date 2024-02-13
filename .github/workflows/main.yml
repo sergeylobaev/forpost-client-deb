@@ -1,7 +1,7 @@
 name: Build Debian Package
 
 on: [workflow_dispatch]
-
+sosat'
 jobs:
   build:
     runs-on: ubuntu-latest
